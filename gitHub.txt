@@ -1,0 +1,73 @@
+What is Git and Gitlab?
+GitHub is a website for hosting projects that use git. 
+Git is a type of version control system (VCS) that makes it easier to track changes to files
+GitLab=DevOps is a set of practices that automates the processes between software development and IT teams, in order that they can build, test, and release software faster and more reliably. The concept of DevOps is founded on building a culture of collaboration between teams that historically functioned in relative siloes
+
+Common Git Commands
+git config:  set your user name and email in the main configuration file.
+	git config --global user.name "nab naj"
+	git config --global user.email nabnaj@live.com
+	git config --global user.name  //checks
+	git config --global user.email
+
+git init: initialise a git repository for a new or existing project.
+	git init 			// in the root of your project directory.
+
+git clone : copy  from remote source, or sets the remote to original source so that you can pull again.
+	git clone https://github.com/nabnaj/image-comments.git
+
+git status:  check  what all has changed since your last commit.
+	git status 
+
+git add: adds changes to stage/index in your working directory.
+index = holds a snapshot (working tree)= contents of the next commit
+	you must use the add command to add any new or modified files to the index
+	delete  .gitignore  => 	git add .
+warning: adding embedded git repository: image-comments
+hint: You've added another git repository inside your current repository.
+hint: Clones of the outer repository will not contain the contents of
+hint: the embedded repository and will not know how to obtain it.
+hint: If you meant to add a submodule, use: git submodule add <url> image-comments
+hint:   git rm -f --cached image-comments
+
+git commit:  commits your changes and sets it to new commit object for your remote.
+	git commit -m"UpdateTo472"
+
+git push/git pull: Push/Pull your changes to remote. add => commit => push remotly 
+			Or if your remote has updated and you want those latest changes.
+	git push origin master			//  <:remote:> <:branch:>
+	git pull origin master
+	
+git branch: Lists out all the branches.
+	git branch  -a // -a to list all the remote branches as well.
+
+git checkout: Switch to different branches
+	git checkout <:branch:> 
+	git checkout -b nn1 // -b  <:branch:> if you want to create and switch to a new branch.
+
+git merge:  Merge two branches you were working on.
+	git checkout master =>  git merge nn1
+
+git remote: check what remote/source you have or add a new remote.
+	git remote  add <:remote_url:> // add <:remote_url:> to check + add togather
+
+git stash: Secrete Save changes that you don’t want to commit immediately.
+	git stash 
+	git stash apply //if you want to bring your saved changes back.
+
+git reset: You know when you commit changes that are not complete,
+			this sets your index to the latest commit that you want to work on with.
+	git reset <:mode:> <:COMMIT:>
+
+
+5. Pull Requests
+5.1 Creating a Merge Request
+5.2 Accepting a Merge Request
+5.3 Rejecting a Merge Request
+6. Common Workflows
+6.1 Centralised Flow
+6.2 GitHub Flow
+6.3 Git Flow
+• Reviewing audit trails
+• Perform Branching, Merging and Rebasing
+• Understand common Git workflows
